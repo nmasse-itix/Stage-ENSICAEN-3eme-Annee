@@ -1,0 +1,70 @@
+<?xml version='1.0' encoding='utf-8' ?>
+<!DOCTYPE book PUBLIC "-//OASIS//DTD DocBook XML V4.4//EN" "file:docbook/docbookx.dtd" [
+<!ENTITY preface SYSTEM "include/preface.xml">
+<!ENTITY pres_ent SYSTEM "include/pres_ent.xml">
+<!ENTITY pres_stage SYSTEM "include/pres_stage.xml">
+<!ENTITY existant SYSTEM "include/existant.xml">
+<!ENTITY travail_perso SYSTEM "include/travail_perso.xml">
+<!ENTITY conclusion SYSTEM "include/conclusion.xml">
+<!ENTITY biblio SYSTEM "include/biblio.xml">
+<!ENTITY appendices SYSTEM "include/appendices.xml">
+<!ENTITY app_int SYSTEM "include/integration/int.xml">
+]>
+<book lang="fr">
+  <!-- Metadata -->
+  <bookinfo>
+    <title>Étude et développement d'un connecteur CMC pour OpenTrust-PKI</title>
+    <subtitle>Rapport de stage de fin d’études</subtitle>
+    <author>
+      <firstname>Nicolas</firstname><surname>MASSÉ</surname>
+      <affiliation>
+        <orgname>IDEALX</orgname>
+      </affiliation>
+      <email>nicolas.masse@idealx.com</email>
+    </author>
+    <copyright>
+        <year>2007</year>
+        <holder>Nicolas MASSÉ</holder>
+    </copyright>
+    <abstract>
+      <para> 
+	Dans le cadre de mes études à l'ENSICAEN, je fût en stage au sein d'IDEALX trois mois durant. Lors de cette période, j'ai participé à la vie de l'entreprise en joignant une équipe d'intégrateurs pendant cinq semaines, mais j'ai également, pendant huit semaines, réalisé mon projet de fin d'étude : <emphasis>étude et développement d'un connecteur CMC pour le logiciel OpenTrust-PKI</emphasis> -- c'est à dire un connecteur destiné à l'auto-enrôlement des clients Microsoft. Ce projet a pour objectif de simplifier la phase de déploiement des certificats dans un environnement Microsoft, permettant ainsi de diminuer le TCO d'OpenTrust-PKI. Ce présent rapport présente le travail que j'ai réalisé pendant ce stage, le contexte technique nécessaire à sa compréhension et les résultats obtenus. 
+      </para>
+    </abstract>
+  </bookinfo>
+  
+
+  <!-- Preface -->
+  &preface;
+
+  <!-- Présentation de l'entreprise -->
+  &pres_ent;
+
+  <!-- Présentation du stage -->
+  &pres_stage;
+
+  <!-- Étude de l'existant -->
+  &existant;
+
+  <!-- Travail personnel -->
+  &travail_perso;
+
+  <!-- Conclusion -->
+  &conclusion;
+
+  <!-- Appendices -->
+  &appendices;
+
+  <appendix id="app_int">
+    <title>Contributions à l'intégration de la PKI 3.4</title>
+    
+    <para>
+      &app_int;
+    </para>
+  </appendix>
+
+  <!-- Bibliography -->
+  &biblio;
+
+</book>
+

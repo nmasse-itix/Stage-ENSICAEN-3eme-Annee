@@ -1,0 +1,11 @@
+Windows Registry Editor Version 5.00
+
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\rhcsproxy]
+"Description"="Forwards Certificate Requests from the domain to a Red Hat Certicate Authority"
+
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\Eventlog\Application]
+@="RHCSProxy"
+
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\Eventlog\Application\RHCSProxy]
+"EventMessageFile"="C:\\AEP\\messages.dll"
+"TypesSupported"=dword:0000000f

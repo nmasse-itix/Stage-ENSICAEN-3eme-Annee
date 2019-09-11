@@ -1,0 +1,166 @@
+<appendix id="app_cmc">
+  <title>Description du protocole CMC</title>
+
+  <para>CMC signifie "Certificate Management over CMS" et CMS signifie "Cryptographic Message Syntax". C'est un protocole normalisé par l'IETF sous le numéro 2797 qui permet l'enregistrement de certificats (enrollment), tout comme SCEP. Alors que SCEP est principalement utilisé par CISCO, CMC est surtout utilisé par Microsoft.</para>
+  <para>Il est basé sur les standards PKCS#7, PKCS#10 et CRMF. Une attention particulière a été apportée lors de la conception de ce protocole afin de permettre aux clients de continuer à utiliser des objets PKCS#7 et PKCS#10 lorsque c'est possible.</para>
+  <para>Le protocole CMC utilise, lorsque c'est possible, un simple aller-retour pour effectuer un enregistrement. Cette particularité implique certaines propriétés telles que l'aggrégation et le routage au niveau des autorités d'enregistrement locales.</para>
+  <para>Les autorités d'enregistrement locales (LRA, Local Registration Authority) définies dans la norme sont des entités situées entre l'AC et le client. Elles peuvent aggréger les demandes des clients, les aiguiller vers différentes AC, archiver les clés privées ou encore ajouter des extensions aux demandes.</para>
+
+  <figure id="CMC_routage_aggregation.png">
+    <title>Deux modes de fonctionnement</title>
+
+    <mediaobject><imageobject><imagedata fileref="CMC_routage_aggregation.png"
+      format="PNG" width="75%"/></imageobject></mediaobject>
+  </figure>
+
+  <para>
+  Enfin, le protocole propose des services optionnels tels que : l'émission différée, la révocation de certificats ainsi que la récupération de certificats et de listes de révocations. 
+  </para>
+
+  <sect1 renderas="sect2">
+    <title>Structure générale du protocole</title>
+    <para>Dans le cas le plus simple, le client envoie sa CSR (au format PKCS#10) et le serveur retourne le certificat au format PKCS#7. C'est le format simple, il n'y a alors pas de gestion des erreurs, ni de service supplémentaire.</para>
+    <para>Dans les autres cas, le protocole utilise des messages au format complet avec un module ASN.1 comme "glue" entre les formats PKCS#7, 10 et CRMF. Ces messages peuvent contenir plusieurs demandes de certificats, parfois enveloppées dans des messages CMC (en cas de passage par une LRA).</para>
+    <para>Il est important de noter que la RFC <emphasis role="strong">n'impose pas de protocole de transport</emphasis> et certains produits pourraient, par exemple, utiliser un protocole propriétaire pour transmettre les messages CMC.</para>
+  </sect1>
+
+  <sect1 renderas="sect2">
+    <title>Attributs de contrôle</title>
+    <para>Un attribut de contrôle est une valeur qui altère la façon dont l'AC (ou une LRA) va traiter la demande de certificat. Inclu dans une réponse de l'AC, il précise l'état de traitement de la requète (OK, erreur, en cours).</para>
+    <para>Sauf exception, un attribut de contrôle s'applique au message entier, et donc à plusieurs demandes.</para>
+  </sect1>
+
+  <sect1 renderas="sect2">
+    <title>Preuve de possession</title>
+    <para>Les spécifications prévoient l'utilisation de preuves de possession (POP) afin de s'assurer que le client dispose bien de la clé privée. La méthode la plus simple consiste à signer la requète avec la clé privée et pour les clés de chiffrement uniquement, un mécanisme alternatif de type défi-réponse est prévu. Ce mécanisme nécessitant plusieurs échanges, la preuve de possession peut être effectuée par une autorité d'enregistrement locale. </para>
+  </sect1>
+
+  <sect1 renderas="sect2">
+    <title>Preuve d'identité</title>
+
+    <para>Au travers du protocole, les clients demandeurs d'un certificat peuvent prouver leur identité au moyen d'un secret partagé avec l'AC. Ce secret partagé peut être généré par un jeton matériel. </para>
+    <para>La preuve d'identité étant transmise séparément de la preuve de possession, il est nécessaire de lier ces deux informations. La RFC propose deux méthodes : l'une est basée sur un témoin cryptographique (HMAC d'un nombre aléatoire) et l'autre requiert une correspondance entre le secret partagé et le DN de la requète. </para>
+  </sect1>
+
+  <sect1 renderas="sect2">
+    <title>Comparaison avec SCEP</title>
+    
+    <informaltable>
+      <tgroup cols='3'>
+	<colspec colwidth='2*'/>
+	<colspec colwidth='*'/>
+	<colspec colwidth='*'/>
+	<tbody>
+	  <row><entry></entry><entry>SCEP</entry><entry>CMC</entry></row>
+	  <row><entry>Algorithmes supportés</entry><entry>RSA</entry><entry>DSA et DH, RSA en option</entry></row>
+	  <row><entry>Enregistrement de certificat</entry><entry>oui</entry><entry>oui</entry></row>
+	  <row><entry>Emission différée</entry><entry>oui</entry><entry>oui</entry></row>
+	  <row><entry>Récupération d'un certificat</entry><entry>oui</entry><entry></entry></row>
+	  <row><entry>Récupération du certificat racine</entry><entry>oui</entry><entry>facultatif</entry></row>
+	  <row><entry>Récupération de CRL</entry><entry>oui</entry><entry>facultatif</entry></row>
+	  <row><entry>Gestion des LRA</entry><entry></entry><entry>oui</entry></row>
+	  <row><entry>Révocation de certificat</entry><entry></entry><entry>oui</entry></row>
+	  <row><entry>Protocole de transport</entry><entry>HTTP</entry><entry>au choix</entry></row>
+	  <row><entry>Confidentialité</entry><entry>oui</entry><entry>à la carte</entry></row>
+	  <row><entry>Preuve de possession</entry><entry>limitée<footnote><para>Se limite à une signature de la requète, pas de gestion des clés de chiffrement seulement.</para></footnote></entry><entry>complète</entry></row>
+	  <row><entry>Gestion de l'autorité de séquestre</entry><entry></entry><entry>oui</entry></row>
+	</tbody>
+      </tgroup>
+    </informaltable>
+
+  </sect1>
+</appendix>
+
+<appendix id="app_uml">
+  <title>Diagramme statique d'AEP</title>
+
+  <mediaobject><imageobject><imagedata fileref="statique.png"
+  format="PNG" width="100%"/></imageobject></mediaobject>
+
+</appendix>
+
+<appendix id="app_iface">
+  <title>Interface ICertRequestD</title>
+
+<programlisting>[
+        object,
+        uuid(d99e6e70-fc88-11d0-b498-00a0c90312f3),
+        dual,
+        helpstring("Red Hat ICertRequestD Interface"),
+        pointer_default(unique)
+]
+interface ICertRequestD: IUnknown
+{
+        import "oaidl.idl";
+
+
+        HRESULT Request(
+                [in] DWORD dwFlags,
+                [unique][string][in] const wchar_t * pwszAuthority,
+                [ref][out][in]       DWORD *         pdwRequestId,
+                [out]                DWORD *         pdwDisposition,
+                [unique][string][in] const wchar_t * pwszAttributes,
+                [ref][in]            const CERTTRANSBLOB *pctbRequest,
+                [ref][out]           CERTTRANSBLOB * pctbCertChain,
+                [ref][out]           CERTTRANSBLOB * pctbEncodedCert,
+                [ref][out]           CERTTRANSBLOB * pctbDispositionMessage);
+
+        HRESULT GetCACert(
+                [in]                 DWORD           fchain,
+                [unique][string][in] const wchar_t * pwszAuthority,
+                [ref][out]           CERTTRANSBLOB * pctbOut );
+
+        HRESULT  Ping(
+                [unique][string][in] const wchar_t * pwszAuthority);
+
+};
+
+[
+        object,
+        uuid(5422fd3a-d4b8-4cef-a12e-e87d4ca22e90),
+        dual,
+        helpstring("Red Hat ICertRequestD2 Interface"),
+        pointer_default(unique)
+]
+interface ICertRequestD2: ICertRequestD
+{
+        import "oaidl.idl";
+
+        HRESULT Request2(
+                [unique][string][in] const wchar_t * pwszAuthority,
+                [in]                 DWORD           dwFlags,
+                [unique][string][in] const wchar_t * pwszSerialNumber,
+                [ref][out][in]       DWORD *         pdwRequestId,
+                [out]                DWORD *         pdwDisposition,
+                [unique][string][in] const wchar_t * pwszAttributes,
+                [ref][in]            const CERTTRANSBLOB *pctbRequest,
+                [ref][out]           CERTTRANSBLOB * pctbFullResponse,
+                [ref][out]           CERTTRANSBLOB * pctbEncodedCert,
+                [ref][out]           CERTTRANSBLOB * pctbDispositionMessage
+                );
+
+
+        HRESULT GetCAProperty(
+                 [unique][string][in]  const wchar_t *pwszAuthority,
+         [in]                  LONG           PropId,
+         [in]                  LONG           PropIndex,
+         [in]                  LONG           PropType,
+         [ref][out]            CERTTRANSBLOB *pctbPropertyValue
+                 );
+
+
+        HRESULT GetCAPropertyInfo(
+                 [unique][string][in]    const wchar_t *pwszAuthority,
+         [out]                   LONG          *pcProperty,
+         [ref][out]              CERTTRANSBLOB *pctbPropInfo
+                 );
+
+
+        HRESULT  Ping2(
+                [unique][string][in] const wchar_t * pwszAuthority);
+
+
+};
+</programlisting>
+</appendix>
+

@@ -1,0 +1,148 @@
+<chapter id="ch_existant">
+  <title>Étude de l'existant</title>
+
+  <para>
+    Cette partie présente deux solutions existantes<footnote><para>Il existe également une troisième solution : SCEP. Voir <uri>http://www.ietf.org/internet-drafts/draft-nourse-scep-15.txt</uri>.</para></footnote> permettant l'auto-enrôlement : IDX-Enroll, un logiciel développé par IDEALX, et CMC, un protocole géré nativement par les clients Microsoft. 
+  </para>
+  
+  <sect1>
+    <title>IDX-Enroll</title>
+
+    <para>
+      Afin de combler le besoin d'enrôlement automatique de ses clients, IDEALX a fait développer le logiciel IDX-Enroll dont le fonctionnement est le suivant :
+      <itemizedlist>
+	<listitem>
+	  <para>
+	    la solution se présente sous la forme d'un package MSI que l'on déploie sur les contrôleurs du domaine par une politique de groupe (aussi appelée GPO). 
+          </para>
+	</listitem>
+	<listitem>
+	  <para>
+	    le package MSI contient une clé privé et un certificat d'authentification qu'IDX-Enroll utilise pour s'authentifier auprès du connecteur SOAP de la PKI.
+          </para>
+	</listitem>
+	<listitem>
+	  <para>
+	    Toutes les opérations cryptographiques sont effectuées via le connecteur SOAP <emphasis role="strong">sans validation (ni d'un opérateur, ni d'un annuaire d'entreprise)</emphasis>. 
+          </para>
+	</listitem>
+      </itemizedlist>
+    </para>
+
+    <figure id="IDX-Enroll.png">
+      
+      <title>Fonctionnement de l'auto-enrôlement avec IDX-Enroll</title>
+      
+      <mediaobject><imageobject><imagedata fileref="IDX-Enroll.png"
+      format="PNG" width="90%"/></imageobject></mediaobject>
+    </figure>
+
+    <para>
+      Cette solution présente de multiples inconvénients:
+
+      <itemizedlist>
+	<listitem>
+	  <para>
+	    Elle est intrusive : un logiciel doit être déployé sur tous les contrôleurs de domaine, ce qui implique de tester le logiciel sur les différentes configurations du client. 
+          </para>
+	</listitem>
+	<listitem>
+	  <para>
+	    Les informations d'authentification (clé privée et certificat) sont déployées avec le logiciel et par conséquent, sont les mêmes pour tous les contrôleurs de domaine. 
+          </para>
+	</listitem>
+	<listitem>
+	  <para>
+	    La validation des informations du certificat est effectuée par IDX-Enroll lui-même.
+          </para>
+	</listitem>
+      </itemizedlist>
+    </para>
+
+    <para>
+      Au vu de ces inconvénients, le développement d'une autre solution s'avère nécessaire.
+    </para>
+  </sect1>
+
+  <sect1>
+    <title>Le protocole CMC</title>
+    
+    <para>
+      CMC est le protocole cryptographique utilisé par les clients Microsoft pour obtenir un certificat lors d'un enrôlement (manuel ou automatique).
+      Ce protocole standardisé par l'IETF sous le numéro 2797 précise la syntaxe des messages cryptographiques utilisés lors d'un enrôlement.
+      Une description détaillée du protocole est disponible en <xref linkend="app_cmc"/>.
+    </para>
+    
+    <figure id="PKI_MS-Fonct.png">
+      <title>Fonctionnement de l'auto-enrôlement via CMC</title>
+      
+      <mediaobject><imageobject><imagedata fileref="PKI_MS-Fonct.png"
+      format="PNG" width="100%"/></imageobject></mediaobject>
+    </figure>
+
+    <para>
+      À partir de Windows 2003 Server et Windows XP, Microsoft fournit en standard un client d'enrôlement CMC prévu pour s'interfacer avec sa PKI (et uniquement celle-ci). Ce client tire pleinement partie de l'infrastructure de sécurité Microsoft. En effet, il s'interface avec Active Directory pour obtenir sa configuration et utilise les mécanismes d'authentification standards Windows (Kerberos). De cette manière, le processus d'enrôlement est <emphasis role="strong">entièrement automatique et authentifié</emphasis>. De plus, les informations du certificat sont générées par l'AC à partir d'un référentiel de confiance : l'Active Directory. 
+    </para>
+
+    <sect2>
+      <title>AEP</title>
+
+      <para>
+	AutoEnrollment Proxy (AEP) est un logiciel Open Source initialement réalisé par Red Hat, et maintenu à présent par le projet Fedora Directory Server. 
+	Après enregistrement dans l'Active Directory, il est vu par les client Windows comme une PKI Microsoft, et ainsi permet d'utiliser le client d'enrôlement
+	natif sans la PKI Microsoft.
+      </para>
+
+      <para>
+	N'utilisant pas l'autorité de certification Microsoft, AEP n'est pas pour autant une AC ! Il a été conçu pour transmettre les demandes de certificat à une PKI tierce : Red Hat Certificate System, qui est la développée par Red Hat (originellement conçue par Netscape).
+      </para>
+    </sect2>
+  </sect1>
+
+  <sect1>
+    <title>Comparaison des coûts</title>
+
+    <sect2>
+      <title>Coûts liés à IDX-Enroll</title>
+      
+      <para>
+	De par sa nature, IDX-Enroll implique certains coût pour le client :
+	<itemizedlist>
+	  <listitem>
+	    <para>le coût de validation du logiciel : il est dû au fait que le client doit tester le logiciel sur ses plateformes de test avant de le déployer en production. Ce coût est estimé à 40-50 jours-homme.</para>
+	  </listitem>
+	  <listitem>
+	    <para>le coût de la revue de supportabilité.</para>
+	    <para>La revue de supportabilité s'applique à un projet informatique, qu'il s'agisse d'une première installation, d'une mise à jour ou d'une migration liée aux technologies Microsoft. L'objet de ce service est de procéder à un examen de l'environnement du client et d'émettre une série de recommandations. En exploitant ces recommandations, le client évite d'éventuels problèmes et s'assure ainsi du bon déroulement des différentes phases de son projet.)
+	    </para>
+	  </listitem>
+	  <listitem>
+	    <para>le coût de déploiement : il est dû au fait qu'un déploiement n'est en général pas effectué en une seule fois mais progressivement en s'assurant du bon déroulement du processus.</para>
+	  </listitem>
+	  <listitem>
+	    <para>le coût de maintenance : à chaque nouvelle version de IDX-Enroll, le client doit re-tester la solution et la déployer.</para>
+	  </listitem>
+	</itemizedlist>
+      </para>
+    </sect2>
+
+    <sect2>
+      <title>Coûts liés à AEP</title>
+      
+      <para>
+	En comparaison, les coûts liés à l'utilisation d'AEP sont bien moindres. Aucune installation, aucun paramètrage sur les contrôleurs de domaine n'étant nécessaire, il n'implique que des coûts de déploiement : enrôler ces machines petit à petit en s'assurant du bon déroulement de la procédure.
+      </para>
+    </sect2>
+
+    <sect2>
+      <title>Comparaison</title>
+      
+      <para>
+	Il s'avère que cette dernière solution est bien plus avantageuse que IDX-Enroll. L'équipe commerciale/avant vente estime d'ailleurs qu'elle pourrait diviser les coûts d'enrôlement des contrôleurs de domaine par dix.
+      </para>
+    </sect2>
+
+  </sect1>
+  
+</chapter>
+

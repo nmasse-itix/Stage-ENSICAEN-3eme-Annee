@@ -1,0 +1,36 @@
+<preface>
+  <title>Introduction</title>
+
+  <para>
+    Dans le cadre de mes études à l'université de CAEN, j'ai été en stage au sein d'OpenTrust six mois durant. 
+    Lors de cette période, j'ai participé à la vie de l'entreprise en joignant une équipe d'intégrateurs pendant cinq semaines, mais j'ai également réalisé mon projet de fin d'étude : <emphasis>étude et développement d'un connecteur CMC pour le logiciel OpenTrust-PKI</emphasis> -- c'est à dire un connecteur destiné à l'auto-enrôlement des clients Microsoft. 
+  </para>
+  
+  <para>
+    Ce projet a pour objectif de simplifier la phase de déploiement des certificats dans un environnement Microsoft, permettant ainsi de diminuer le TCO<footnote><para><emphasis>Total Cost of Ownership</emphasis> ou <emphasis>Coût total de possession</emphasis>. C'est un coût qui intégre tous les éléments constitutifs d'un produit manufacturé (inventé par le Gartner Group en 1987).</para></footnote> d'OpenTrust-PKI. 
+  </para>
+
+  <para>
+    Ce présent rapport expose le travail que j'ai réalisé pendant ce stage, le contexte technique nécessaire à sa compréhension et les résultats obtenus. 
+  </para>
+
+  <sect1 renderas="sect2">
+    <title>Remerciements</title>
+
+    <para>
+      Tout au long de mon stage j'ai bénéficié de l'aide de nombreuses personnes et je leur en suis très reconnaissant.
+      Je remercie tout particulièrement :
+      <itemizedlist spacing="compact">
+        <listitem><para>Mathias BROSSARD, mon maître de stage, pour ses conseils avisés,</para></listitem>
+        <listitem><para>Ayoub OTMANI, mon tuteur à l'université de CAEN,</para></listitem>
+        <listitem><para>David PEPIN, mon binôme, pour son aide tout au long du stage,</para></listitem>
+        <listitem><para>Fredéric GARZON et Nicolas DELON, pour leurs innombrables explications,</para></listitem>
+        <listitem><para>Sherley BROTHIER, directeur technique, pour son soutien,</para></listitem>
+        <listitem><para>Steve PARKINSON, en charge du projet AEP chez Red Hat, pour son aide inestimable,</para></listitem>
+        <listitem><para>tout le personnel d'OpenTrust, pour leur soutien constant.</para></listitem>
+      </itemizedlist>
+    </para>
+  </sect1>
+
+</preface>
+

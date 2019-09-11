@@ -1,0 +1,115 @@
+<chapter>
+  <title>Présentation du stage</title>
+  
+  <para>
+    Cette partie présente le sujet de mon stage : <emphasis>étude et développement d'un connecteur CMC pour le logiciel OpenTrust-PKI</emphasis> -- c'est à dire un connecteur destiné à l'auto-enrôlement des clients Microsoft -- ainsi que le contexte technique nécessaire à sa compréhension. 
+  </para>
+
+  <sect1>
+    <title>Origine des besoins</title>
+    
+    <para>
+      Le sujet de ce stage vient d'un besoin assez éloigné : l'ouverture de session par carte à puce. En effet, une grande banque française, important client d'IDEALX, souhaite mettre en place cette solution au sein de leurs agences. Pour cela, les contrôleurs de domaines doivent nécessairement avoir un certificat leur permettant de prouver leur identité (cf. <xref linkend="MsKb-Q281245"/>). 
+    </para>
+      
+    <para>
+      Avec un nombre assez restreint de contrôleurs, ce prérequis ne serait pas un problème. Cependant, ce client en possède un nombre impressionnant : au minimum un par agence, pour un total de plusieurs centaines de contrôleurs de domaine. 
+      De telles proportions écartent immédiatement toutes intervention manuelle et il est nécessaire de songer à un processus automatique : l'auto-enrôlement. 
+    </para>
+  </sect1>
+
+  <sect1>
+    <title>OpenTrust-PKI</title>
+
+    <para>
+      OpenTrust-PKI est une PKI souple et performante : elle dispose de nombreuses qualités techniques et fonctionnelles. 
+    </para>
+
+    <para>
+      Elle est dotée de plusieurs modes de fonctionnement : en ligne (pour les AC opérationnelles) ou hors ligne (pour les AC racines), mono machine ou multi machines. Et afin d'accentuer encore la sécurité de l'infrastructure, elle s'interface avec les principaux HSM du marché (Bull, nCipher, NetSafe). 
+    </para>
+
+    <para>
+      Interopérable avec les principaux produits du marché, elle supporte les protocoles SCEP (enrôlement de certificat) et OCSP (validation de certificat) et s'interface avec l'autorité d'horodatage développée par IDEALX. 
+    </para>
+
+    <para>
+      Cependant, le coté fonctionnel n'est pas en reste : tout est fait pour faciliter le déploiement massif de certificats, que ce soit dans le cas d'une installation initiale ou bien dans le cas de la migration d'une PKI existante :
+      <itemizedlist>
+	<listitem><para>
+	  Indépendamment de l'AC, les certificats émis sont paramétrés (usages de la clé, identité du sujet, modalités de délivrance, etc.) par des profils intégralement modifiables par l'utilisateur.
+	</para></listitem>
+	<listitem>
+	  <para>
+	    Les informations demandées à l'utilisateur se réduisent à leur strict minimum : lorsque c'est possible, elles sont puisées dans des sources d'information existantes : annuaire d'entreprise, certificat utilisateur déjà existant et éventuellement via un plugin spécifique aux besoins du client.
+	  </para>
+	  <para>
+	    Poussée à son paroxysme (toutes les informations sont puisées d'une source fiable), cette fonction autorise la délivrance de certificats sans intervention d'un opérateur de validation. 
+	  </para>
+	</listitem>
+	
+	<listitem>
+	  <para>
+	    Afin de s'intégrer au mieux aux processus de l'entreprise, OpenTrust-PKI supporte plusieurs workflows de validation : par un opérateur, par une source externe ou encore au moyen d'une pré-validation.
+	  </para>
+	  <para>
+	    Et éventuellement, si ces workflows ne suffisent pas, les fonctions les plus courantes de la PKI sont accessible au travers d'un connecteur SOAP, ce qui permet de les intégrer aux processus déjà existants au sein de l'entreprise.
+	  </para>
+	</listitem>
+      </itemizedlist>
+    </para>
+
+  </sect1>
+
+  <sect1>
+    <title>Auto-enrôlement des clients Microsoft</title>
+    
+
+    <sect2>
+      <title>Définition de l'auto-enrôlement</title>
+
+      <para>
+	Dans un article daté de 2003, Peter Gutmann, chercheur en sécurité informatique, a esquissé ce que pourrait être un auto-enrôlement (cf. <xref linkend="Gutmann03" />).
+	
+	Il s'agit d'un processus en trois étapes:
+	<orderedlist>
+	  <listitem>
+	    <para>Le client doit découvrir l'adresse du point d'enrôlement, que ce soit par une adresse connue de tous ou bien par diffusion de message de découverte de service (par exemple, le protocole SLP).</para>
+	  </listitem>
+	  <listitem>
+	    <para>Il doit ensuite, <emphasis role="strong">de manière authentifiée</emphasis>, obtenir les certificats de confiance (certificats d'AC) qu'il intègrera à son magasin.</para>
+	  </listitem>
+	  <listitem>
+	    <para>Pour finir, il effectue une demande de certificat <emphasis role="strong">authentifiée</emphasis>, via le point d'enrôlement et obtient son certificat qu'il peut intégrer à son magasin de certificat.</para>
+	  </listitem>
+	</orderedlist>
+      </para>
+      
+      <figure id="autoenroll.png">
+	
+	<title>Processus d'enrôlement automatique</title>
+	
+	<mediaobject><imageobject><imagedata fileref="autoenroll.png"
+	format="PNG" width="100%"/></imageobject></mediaobject>
+      </figure>
+    </sect2>
+
+    <sect2>
+      <title>L'environnement Microsoft</title>
+
+      <para>
+	Cette esquisse a été reprise par Microsoft qui, moyennant quelques ajustements (notamment via l'utilisation du protocole CMC), l'a transposée à son environnement technique. Plus de détails sur ce protocole sont disponibles en <xref linkend="app_cmc" />. 
+      </para>
+    </sect2>
+  </sect1>
+
+  <sect1>
+    <title>Cahier des charges</title>
+    
+    <para>
+      L'objectif du projet, dans son ensemble, est d'aboutir à un support complet de l'auto-enrôlement des clients Windows dans le logiciel OpenTrust-PKI via un connecteur CMC.
+      Au vu de l'étendue temporelle de mon stage (huit semaines passées sur ce projet), seul un sous-ensemble des fonctions sera considéré.
+    </para>
+  </sect1>
+</chapter>
+

@@ -1,0 +1,306 @@
+<chapter>
+  <title>Travail Personnel</title>
+  
+  <para>
+    Cette partie présente le travail que j'ai effectué lors de mon stage. Je présente tout d'abord une vue d'ensemble de mon stage, j'aborde ensuite les aspects relationnels et organisationnels et je termine par les aspects techniques du projet.
+  </para>
+
+  <sect1>
+    <title>Aperçu</title>
+
+    <para>
+      Le projet d'aménagement d'un connecteur CMC a débuté lors de mon arrivée chez OpenTrust et a été mené sur une période de cinq mois. David, également stagiaire, a rejoint le projet deux semaines après mon arrivée.
+    </para>
+
+    <figure id="gantt.png">
+      <title>Diagramme de Gantt</title>
+      
+      <mediaobject><imageobject><imagedata fileref="gantt.png"
+      format="PNG" width="100%"/></imageobject></mediaobject>
+    </figure>
+
+    <para>
+     La <xref linkend="gantt.png" /> présente l'organisation temporelle de mon stage. Les tâches bleue sont celles que j'ai réalisées, les vertes sont celles que David, mon collègue, a réalisées et la violette est une tâche commune. La tâche grise correspond aux cinq semaines passées sur l'intégration de la PKI 3.4. La barre noire au centre de chaque tâche représente son état d'avancement.
+    </para>
+
+    <sect2>
+      <title>Intégration de la PKI 3.4</title>
+      
+      <para>Le projet CMC avançant à vive allure, il nous a été proposé (à David et moi-même) de participer à l'intégration d'OpenTrust-PKI 3.4. Durant ces cinq semaines, nous avons intégré l'équipe de test pour procéder aux tests fonctionnels du produit. Cette opportunité m'a permis de mieux connaitre le produit, et plus particulièrement tout le coté organisationnel des infrastructures de gestion de clés.</para>
+      
+      <para>
+	Tout au long de la période d'intégration, j'ai rapporté les dysfonctionnements que je constatais en essayant, lorsque mes connaissances me le permettaient, de proposer des possibilités de correction. J'ai également formulé des propositions d'amélioration lorsque je jugeais que l'implémentation d'une fonctionnalité n'était pas optimale. La liste de mes contributions est disponible en <xref linkend="app_int" />.
+      </para>
+
+      <para>
+	Je me suis aussi proposé de créer les fiches de test d'une nouvelle fonctionnalité de la version 3.4 : la gestion des langues associées aux certificats. Ce fût pour moi l'occasion de m'entretenir avec les architectes du produit et d'émettre ainsi des propositions d'amélioration. 
+      </para>
+    </sect2>
+
+    <sect2>
+      <title>Projet CMC</title>
+      
+      <para>Ce projet a débuté par l'étude de la RFC 2797 qui a ensuite débouché sur la rédaction d'une synthèse de ce standard. Ce fût une phase importante du projet, car cela m'a permis de mieux cerner l'étendue des fonctionnalités, possibilités et limitations du protocole. Afin qu'elle profite au plus grand nombre, la synthèse a été ajoutée à la documentation interne du produit. 
+      </para>
+
+      <para>
+	La seconde étape fût l'étude de l'existant. Avec l'aide de Christophe De Minguine, nous avons évalué l'opportunité du projet AEP. Cette évaluation fût favorable et les choses se sont accélérées : j'ai réalisé une preuve du concept afin de pouvoir apprécier promptement la faisabilité de cette solution. J'ai alors pu rapidement planifier l'organisation du projet. 
+      </para>
+
+      <para>
+	J'ai ensuite commencé à adapter AEP pour OpenTrust-PKI et plutôt que de développer un connecteur CMC spécifique, j'ai réutilisé le connecteur SOAP existant. De plus amples détails sur cette contorsion technique sont disponibles en <xref linkend="sect_tech" />. Ce recyclage a stimulé la réalisation d'un prototype qui a tout de suite intéressé le client à qui nous l'avons présenté. Parallèlement, David travaillait sur l'étude et le développement d'un connecteur SOAP spécifique, qui sera utilisé par la suite. 
+      </para>
+      
+      <para>
+	En prévision des développements futurs, j'ai passé trois jours en autoformation sur le thème de la <emphasis>sécurité sous Windows avec .NET</emphasis><footnote><para>Voir <xref linkend="Brown04" />.</para></footnote>. Cette autoformation a affiné mes connaissances des technologies Microsoft impliquées dans la sécurité. Ceci m'a également fait découvrir de nouveaux horizons concernant les possibilités d'évolution d'AEP. 
+      </para>
+
+      <para>
+	J'ai ensuite débuté la phase de développement. Durant cette période, j'ai réfléchi aux évolutions possibles de la version originale d'AEP et j'ai concrètisé ces réflexions par une version industrielle d'AEP qui a été intégré à l'offre OpenTrust. Afin de faciliter le déploiement du logiciel chez les client, j'ai écrit la documentation d'installation et de configuration. 
+      </para>
+
+      <para>
+	J'ai également participé à la réalisation d'une maquette pour un futur client d'OpenTrust. Celle-ci consistait à montrer le savoir faire d'OpenTrust dans l'enrôlement automatique de machines et d'utilisateurs. La maquette a été présentée chez le client et a débouché sur une seconde maquette, plus complète et plus finalisée qui a également été présentée chez le client. 
+      </para>
+
+<!--      <para>
+	Entre temps, j'ai participé au projet d'équilibrage de charge et de haute disponibilité du serveur d'horodatage développé par OpenTrust. Étant donné le temps dont je disposait, ma contribution au projet s'est limitée à un programme de benchmark de la bibliothèque Spread.  La bibliothèque Spread regroupe un ensemble de fonction de communication exploitant la Synchronie Virtuelle. 
+      </para> -->
+
+      <para>
+	Plus récemment, on m'a confié la réalisation d'une démonstration de gestion du cycle de vie des certificats en environnement Microsoft pour un important client d'OpenTrust. Cette démonstration constitue le point de départ du projet Armageddon auquel je participe actuellement.
+      </para>
+
+    </sect2>
+
+  </sect1>
+
+  <sect1>
+    <title>Aspects relationnels</title>
+
+    <sect2>
+      <title>Travail en équipe</title>
+      
+      <para>
+	Lors de l'intégration, j'ai rallié une équipe nouvelle et durant la première semaine, j'ai bénéficié des conseils et explications d'une personne expérimentée. Grâce à cette phase de formation, j'ai pu prendre en main le produit avec diligence et être rapidement opérationnel.
+      </para>
+
+      <para>
+	L'intégration à une équipe est également un moyen d'avancer rapidement sur un projet surtout lors de l'emploi de technologies nouvelles. Il est important, en effet, d'utiliser les compétences locales pour débloquer rapidement les situations difficiles et obtenir un avis extérieur sur les orientations que l'on envisage.
+      </para>
+
+      <para>
+	Tout au long de mon stage, j'ai abondamment communiqué sur l'avancement du projet, utilisant les moyens à ma disposition : wiki, listes de diffusion, courriels et réunions d'avancement. De cette manière, j'ai eu un retour rapide quant à l'orientation à donner au projet et c'est ainsi qu'une démonstration a pu être proposée à un important client d'OpenTrust. 
+      </para>
+
+    </sect2>
+
+    <sect2>
+      <title>Collaboration avec le monde Open Source</title>
+      
+      <para>
+	Travaillant sur un projet Open Source, j'ai eu à correspondre avec le mainteneur du projet AEP pour obtenir l'aide nécessaire à mon autonomie : état d'avancement, configuration nécessaire, orientation à prendre, etc. 
+	Il est envisagé de maintenir une base de code commune, mutualisant ainsi les corrections de bug et les évolutions futures.
+      </para>
+    </sect2>
+  </sect1>
+
+
+  <sect1>
+    <title>Organisation</title>
+    
+    <para>
+      Peu de temps après la preuve du concept, je me suis appliqué à définir, en concertation avec David, une liste précise de tâches et à les échelonner dans le temps en fonction de leurs liens de précédence. Cette approche nous a permis, d'une part, d'évaluer plus précisément le temps nécessaire pour mener à bien le projet. D'autre part, nous avons pu mesurer au fur et à mesure l'avancée du projet, et ainsi éviter l'effet tunnel.
+    </para>
+
+    <sect2>
+      <title>Documentation</title>
+      
+      <para>
+	Le projet AEP ne disposant pas de documentation technique (pour les développeurs), j'ai réalisé, à partir des sources du programme, un diagramme statique UML<footnote><para>Une copie de ce diagramme est disponible en <xref linkend="app_uml" />.</para></footnote> que j'ai ensuite envoyé à Steve Parkinson, le mainteneur du projet chez Red Hat. 
+      </para>
+      
+      <para>
+	Afin de mieux faire comprendre l'intéret du projet, son organisation et les étapes à venir, j'ai utilisé l'outil interne de documentation <emphasis>Trac</emphasis>. C'est une application web de gestion des sources (SCM) et de gestion de projet intégré. Il est très adapté pour les petits projets (quelques dizaines de personnes) et est utilisé par beaucoup de projets Open Source. Il permet de travailler de manière désynchronisée dans le temps et dans l'espace avec les personnes impliquées dans le projet.
+      </para>
+    </sect2>
+  </sect1>
+     
+  <sect1 id="sect_tech">
+    <title>Aspects techniques</title>
+
+    <para>
+      AEP, AutoEnrollment Proxy, est un serveur mandataire authentifiant. Il s'insère à la place d'une PKI<footnote><para>La dénommination officielle de la PKI Microsoft est "Services de certificat".</para></footnote> Microsoft et transmet les demandes de certificat à une PKI tierce : initialement, la PKI Red Hat. 
+    </para>
+
+    <sect2>
+      <title>Services de certificat Microsoft</title>
+      
+      <para>
+	Les services de certificat, disponibles depuis Windows 2000, sont en fait une autorité de certification intégrée à l'environnement Microsoft. 
+	Cette particularité est aussi un inconvénient: sa portée ne peut dépasser les limites de la forêt<footnote><para>Une forêt est un ensemble d'arbres de domaines qui se font confiance les uns les autres : c'est la frontière de l'authentification Windows. Tout utilisateur ou machine en dehors de la forêt ne peut être authentifié. Voir <xref linkend="Lowe-Norris00" />.</para></footnote> dans laquelle elle est installée. 
+	C'est cette limitation qui incite certains clients à migrer vers une PKI plus souple, par exemple OpenTrust-PKI. 
+      </para>
+
+      <para>
+	Le fonctionnement de la PKI Microsoft est illustré par la <xref linkend="PKI_MS-Fonct.png" />. Il est important de noter ici l'utilisation du protocole DCOM<footnote><para>Pour de plus amples informations, voir <uri>http://en.wikipedia.org/wiki/Distributed_Component_Object_Model</uri></para></footnote> comme protocole de transport. 
+      </para>
+
+    </sect2>
+
+    <sect2>
+      <title>DCOM</title>
+      
+      <para>
+	Distributed Component Object Model est une technologie de composants distribués développée par Microsoft. C'est une extension de COM, aussi appelée par certains <emphasis>COM with a longer wire</emphasis>. Cette appellation a le mérite de montrer le principal avantage de la technologie DCOM : la compatibilité binaire avec les composants déjà écrits. Mais cette compatibilité est aussi une faiblesse : elle limite les possibilités de DCOM et est source d'ennuis pour le programmeur et l'administrateur système.
+      </para>
+
+      <figure id="ms2.gif">
+	<title>Interfaces des services de certificat</title>
+	
+	<mediaobject><imageobject><imagedata fileref="ms2.gif"
+	format="GIF" width="85%"/></imageobject></mediaobject>
+      </figure>
+      
+      <para>
+	Les services de certificat Microsoft utilisent DCOM comme protocole de transport entre le client et le point d'enrôlement. La <xref linkend="ms2.gif" /><footnote><para>Source: <uri>http://www.microsoft.com/</uri></para></footnote> présente toutes les interfaces de ces services. La barre verticale symbolise la limite entre le client et le serveur. 
+      </para>
+
+      <para>
+	Parmi les interfaces des services de certificat, seules trois sont publiées et documentées : ICertRequest, ICertAdmin et ICertView. Ces interfaces sont présentes sur les clients Windows depuis Windows 2000. Malheureusement, les interfaces "serveur" ne sont ni publiées, ni documentées. Elle font de plus l'objet d'une licence aux États-Unis. 
+      </para>
+
+      <para>
+	Le projet AEP n'aurait jamais vu le jour si Microsoft n'avait pas publié par erreur les informations nécessaires à la reconstitution de l'interface <emphasis role="strong">ICertRequestD</emphasis>. 
+      </para>
+    </sect2>
+
+    <sect2>
+      <title>AEP</title>
+      
+      <para>
+	AEP, AutoEnrollment Proxy, est un serveur mandataire authentifiant. Il accepte les demandes authentifiées de certificat par l'interface DCOM ICertRequestD, les transmet à une PKI tierce et retourne le certificat généré au client. (voir <xref linkend="AEP-Fonct.png" />). 
+      </para>
+      
+      <figure id="AEP-Fonct.png">
+	<title>Processus d'enrôlement avec AEP</title>
+	
+	<mediaobject><imageobject><imagedata fileref="AEP-Fonct.png"
+	format="PNG" width="100%"/></imageobject></mediaobject>
+      </figure>
+
+      <para>
+	Ce niveau d'indirection supplémentaire permet de découpler la PKI du domaine de sécurité des clients Windows (l'ensemble des domaines qui composent la forêt), comme illustré par la <xref linkend="AEP-IDXPKI.png" />.
+      </para>
+
+      <figure id="AEP-IDXPKI.png">
+	<title>Intégration d'AEP dans l'infrastructure Microsoft</title>
+	
+	<mediaobject><imageobject><imagedata fileref="AEP-IDXPKI.png"
+	format="PNG" width="85%"/></imageobject></mediaobject>
+      </figure>
+      
+      <sect3>
+	<title>Modifications apportées à AEP</title>
+	
+	<para>
+	  Les premières actions que j'ai dû entreprendre concernaient la mise en place d'AEP : étudier son fonctionnement, installer un environnement de développement et intégrer AEP au système d'exploitation (enregistrement des classes, création des services, etc.).
+	</para>
+
+	<para>
+	  Je me suis ensuite consacré à la création d'un module de communication avec la PKI. Comme il existait un connecteur SOAP sur celle-ci et qu'il était fonctionnellement adapté, je l'ai réutilisé. Afin de développer ce module, j'ai utilisé le SOAP Toolkit de Microsoft et ai finalement réussi à communiquer avec la PKI à partir d'AEP.
+	</para>
+
+	<para>
+	  L'étape suivante fût la réalisation d'un module d'auto-remplissage : à partir des informations d'authentification du client et en utilisant l'Active Directory, obtenir le nom commun, le FQDN et le GUID<footnote><para>Le GUID est un identifiant utilisé par les technologies Microsoft.</para></footnote> de la machine. 
+	</para>
+
+	<para>
+	  Pour finir, j'ai réalisé une version industrielle d'AEP utilisant le framework .NET et intégrant un système de plugin pour plus de souplesse.
+	</para>
+      </sect3>
+
+      <sect3>
+	<title>Modifications prévues d'AEP</title>
+	
+	<para>
+	  A l'aide de l'expérience acquise avec cette première version d'AEP, j'ai émis des propositions d'améliorations :
+	  <itemizedlist>
+	    <listitem><para>
+	      continuer l'industrialisation (aisance de configuration, stabilité, etc.),
+	    </para></listitem>
+	    <listitem><para>
+	      étendre le système de plugin à tout le logiciel afin de le rendre plus facilement extensible,
+	    </para></listitem>
+	    <listitem><para>
+	      améliorer l'interface de configuration.
+	    </para></listitem>
+	  </itemizedlist>
+	</para>
+
+      </sect3>
+    </sect2>
+
+    <sect2>
+      <title>Problèmes rencontrés</title>
+      
+      <para>
+	L'interface d'enrôlement des services de certificat n'étant ni publiée par Microsoft, ni documentée, son utilisation fût difficile.
+	En effet, le format et la sémantique des paramètres (dix au total) n'étant pas connus et <emphasis role="strong">l'unique</emphasis> message
+	d'erreur du client d'enrôlement windows n'étant pas explicite (voir <xref linkend="err1.png" />), la mise au point n'en fût que plus difficile. 
+
+	<figure id="err1.png">
+	  <title>Message d'erreur du client d'enrôlement</title>
+
+	  <mediaobject><imageobject><imagedata fileref="err1.png"
+	  format="PNG" width="85%"/></imageobject></mediaobject>
+	</figure>
+
+	La raison de cette incapacité à installer le certificat généré est que le sixième paramètre de la méthode <emphasis>Request</emphasis> de l'interface <emphasis>ICertRequestD</emphasis> (cf. <xref linkend="app_iface" />) doit contenir la chaîne de certification complète comprenant le certificat généré et ce bien qu'il soit aussi retourné dans le septième paramètre.
+      </para>
+
+      <para>
+	Une autre difficulté que j'ai rencontrée est le message d'erreur de la <xref linkend="err2.png" />. 
+	
+        <figure id="err2.png">
+	  <title>Message d'erreur du client d'enrôlement</title>
+	  
+	  <mediaobject><imageobject><imagedata fileref="err2.png"
+	  format="PNG" width="85%"/></imageobject></mediaobject>
+	</figure>
+	
+	Cette erreur est liée à un durcissement de la politique de sécurité de Windows 2003 Server, qui a lieu lors de l'installation du Service Pack 1<footnote><para>Ce comportement est décrit dans <uri>http://support.microsoft.com/kb/903220</uri> mais n'est conforme que lorsque les services de certificat sont installés sur la machine.</para></footnote>. La raison de ce problème est que la sécurité des interfaces DCOM est désormais "ACL based" <emphasis role="strong">et</emphasis> "role based" : il ne suffit pas de modifier la liste de contrôle d'accès à l'interface DCOM concernée, il faut également modifier la liste des membres du groupe "DCOM Users". 
+      </para>
+
+      <para>
+	De nombreuses autres erreurs liées à la confidentialité des interfaces d'enrôlement ont ralenti mon avancée. À chaque fois, ma démarche a été identique : 
+	<orderedlist spacing="compact">
+	  <listitem>
+	    <para>vérifier que le problème n'est pas déjà connu en consultant la base de connaissances Microsoft,</para>
+	  </listitem>
+	  <listitem>
+	    <para>consulter les forums, archives de listes de diffusion et autres sources non fiables,</para>
+	  </listitem>
+	  <listitem>
+	    <para>analyser finement le journal des événements,</para>
+	  </listitem>
+	  <listitem>
+	    <para>analyser les trames qui circulent sur le réseau,</para>
+	  </listitem>
+	  <listitem>
+	    <para>lister les appels système à la recherche d'échecs,</para>
+	  </listitem>
+	  <listitem>
+	    <para>procéder par hypothèse / expérience.</para>
+	  </listitem>
+	</orderedlist>
+      </para>
+
+      <para>
+	La dernière source de problèmes fût le manque de documentation sur DCOM. C'est une technologie dépréciée en faveur de .NET, les documentations en ligne sont souvent incomplètes et imprécises, tous les livres traitant de ce sujet ne sont pas réédités et ne sont plus disponibles. 
+	J'ai finalement réussi à me procurer la référence sur le sujet : <emphasis>Professionnal DCOM Programming</emphasis> de Richard GRIMES, ce qui m'a permis de mieux comprendre les tenants et aboutissants de cette technologie.
+      </para>
+    </sect2>
+  </sect1>
+</chapter>
+

@@ -1,0 +1,74 @@
+1519,La génération des entités locales a planté (impossible d'afficher la page),nmasse,defect,closed,normal,IDX-PKI 3.4 (Paperotta)
+1520,Sous IE : Les barres bleues cliquables n'ont pas le bon pointeur de souris,somebody,defect,new,lowest,IDX-PKI Roadmap
+1522,Erreurs dans les logs apache: des fichiers Javascript n'ont pas été trouvés,ndelon,defect,closed,low,IDX-PKI 3.4 (Paperotta)
+1527,Après importation (CERT_EXTERNES_AJOUT)_ impossible de retrouver les certificats importés,ndelon,defect,closed,normal,IDX-PKI 3.4 (Paperotta)
+1528,La commande idxpki-camgr ne vérifie pas la validité de ses paramètres (CERT_EXTERNES_AJOUT),rrenard,defect,closed,normal,IDX-PKI 3.4 (Paperotta)
+1535,Aucun mail envoyé après un recouvrement sur l'AE,ndelon,defect,closed,normal,IDX-PKI 3.4 (Paperotta)
+1538,"Insecure dependency" lors d'un cron (/opt/idxpki/sbin/remove-p12.pl),fgarzon,defect,closed,normal,IDX-PKI 3.4 (Paperotta)
+1547,Révocation par lot: l'élément "Liste des demandes de révocation" reste sélectionné,mbrossard,defect,closed,low,IDX-PKI 3.4 (Paperotta)
+1548,"Télécharger le PKCS#7 avec la chaine de certification" ne contient que le certificat final,rrenard,defect,closed,normal,IDX-PKI 3.4 (Paperotta)
+1552,L'interface de config de l'autofill manque de cohérence avec les autres interfaces,somebody,enhancement,new,low,IDX-PKI Roadmap
+1554,La liste des profils de certificat dans la gestion des certificats n'est très lisible,somebody,enhancement,closed,lowest,IDX-PKI 3.4 (Paperotta)
+1559,Faute de frappe : un "de" en trop lors d'une demande de certificat centralisée,somebody,defect,closed,lowest,IDX-PKI 3.4 (Paperotta)
+1560,Les mails envoyés à l'administrateur lors d'une requète SCEP ne sont pas complets,ndelon,defect,closed,normal,IDX-PKI 3.4 (Paperotta)
+1561,Revocation SCEP : "Code de révocation présent dans la demande de révocation mais non requis",fgarzon,defect,closed,normal,IDX-PKI 3.4 (Paperotta)
+1568,[PUBLICATION_CERT_SIMPLE_REPO_UNAV_2] Une seule tentative de publication effectuée,somebody,defect,closed,normal,IDX-PKI 3.4 (Paperotta)
+1569,[PUBLICATION_CERT_MULTI_PROFILE] Seul le premier profil de publication est pris en compte,somebody,defect,closed,normal,IDX-PKI 3.4 (Paperotta)
+1570,Petit bug d'affichage dans la gestion des AC,mbrossard,defect,closed,lowest,IDX-PKI 3.4 (Paperotta)
+1571,[PUBLICATION_CRL] Rien n'est publié_ mais les logs indiquent que tout s'est bien passé,somebody,defect,closed,normal,IDX-PKI 3.4 (Paperotta)
+1573,Il serait bien de pouvoir configurer le délai d'attente après un publication ratée,somebody,enhancement,new,normal,IDX-PKI Roadmap
+1575,Problème lors du recouvrement avec l'admin.p12,ndelon,defect,closed,normal,IDX-PKI 3.4 (Paperotta)
+1579,Amélioration de la CSS avec IE7,somebody,enhancement,new,lowest,IDX-PKI Roadmap
+1582,Warnings dans les logs d'apache,mbrossard,defect,closed,low,IDX-PKI 3.4 (Paperotta)
+1583,Il n'est pas possible d'émettre un certificat avec un DN vide,ndelon,defect,closed,normal,IDX-PKI 3.4 (Paperotta)
+1587,Confiance aux AC: Message d'erreur pas explicite,somebody,enhancement,closed,low,IDX-PKI 3.4 (Paperotta)
+1588,Confiance aux AC: Impossible d'uploader un certificat,mbrossard,defect,closed,normal,IDX-PKI 3.4 (Paperotta)
+1589,Erreur interne lors du rejet d'une demande de certificat,somebody,defect,closed,normal,IDX-PKI 3.4 (Paperotta)
+1593,Impossible de supprimer une AC en cours de création,somebody,enhancement,new,normal,IDX-PKI Roadmap
+1598,Multiples erreurs avec IE7 lors de l'ajout d'une AC,ndelon,defect,new,normal,IDX-PKI 3.4 : Maintenance
+1603,Révocation des certificats d'AC avec IE(7): Comportement limite,somebody,enhancement,new,normal,IDX-PKI Roadmap
+1606,Yellow message incorrect dans la gestion des profils,blepilliez,enhancement,closed,normal,IDX-PKI 3.4 (Paperotta)
+1607,[CERT_CENT_P12_USER_PWD_ADMIN] No encryption certificate is associated to your DN_ the mail will be sent unencrypted.,blepilliez,enhancement,closed,lowest,IDX-PKI 3.4 (Paperotta)
+1608,[CERT_CENT_AE_OK] Mail chiffré alors qu'il ne devrait pas l'être,ndelon,defect,closed,normal,IDX-PKI 3.4 (Paperotta)
+1609,[PKI_CERT_SERV_P10] Messages d'erreur incohérents,fgarzon,defect,closed,normal,IDX-PKI 3.4 (Paperotta)
+1615,(édition d'un profil avec IE) Incohérence de l'interface profil pré-validé centralisé,somebody,enhancement,closed,low,IDX-PKI 3.4 (Paperotta)
+1617,Mail de révocation: il y a un [COMMENT] dans le corps du mail,ndelon,defect,closed,normal,IDX-PKI 3.4 (Paperotta)
+1625,Autofill_ champs obligatoires_ erreur interne,somebody,defect,closed,normal,IDX-PKI 3.4 (Paperotta)
+1626,Il n'est pas possible de supprimer des RDNs et des attributs d'un profil d'autofill,somebody,enhancement,closed,low,IDX-PKI 3.4 (Paperotta)
+1627,La recherche avec "*" ne fonctionne pas dans l'interface d'édition des droits sur les profils et les zones,fgarzon,defect,closed,normal,IDX-PKI 3.4 (Paperotta)
+1629,Il est possible d'associer un profil de mail "Rejet d'une demande de certificat" à un profil de certificat avec validation externe,ndelon,enhancement,closed,lowest,IDX-PKI 3.4 (Paperotta)
+1632,Amélioration du #1155: Droit d'un certificat révoqué,somebody,enhancement,new,low,IDX-PKI Roadmap
+1633,Langue incorrecte pour l'envoi des mails,somebody,defect,closed,normal,IDX-PKI 3.4 (Paperotta)
+1634,En modifiant l'URL de récupération d'un certificat_ il est possible de modifier le numéro de tracking de cette action dans les logs,somebody,defect,closed,normal,IDX-PKI 3.4 (Paperotta)
+1635,Validation d'une demande de révocation: manque de cohérence,mbrossard,enhancement,closed,lowest,IDX-PKI 3.4 (Paperotta)
+1637,Edition d'un profil de certificat: légère amélioration de l'interface anglaise,blepilliez,enhancement,closed,lowest,IDX-PKI 3.4 (Paperotta)
+1655,Traduction manquante pour AppLogs/detailkey:hash_function,somebody,defect,closed,normal,IDX-PKI 3.4 (Paperotta)
+1657,[CERT_RECH_PAR_SERIAL] Accepter les numéros de série préfixé par un 0,mbrossard,enhancement,closed,lowest,IDX-PKI 3.4 (Paperotta)
+1658,[CERT_RECH_PAR_DN] Supprimer les espaces après les virgules,mbrossard,defect,closed,lowest,IDX-PKI 3.4 (Paperotta)
+1663,Faute de frappe dans l'interface SCEP anglaise,blepilliez,enhancement,closed,normal,IDX-PKI 3.4 (Paperotta)
+1671,Cases à cocher "liées" sous IE7 : Comportement erratique,ndelon,defect,closed,normal,IDX-PKI 3.4 (Paperotta)
+1676,Révocation par lot : Erreur interne,mbrossard,defect,closed,normal,IDX-PKI 3.4 (Paperotta)
+1681,[CERT_SCEP_CONF_ROUTEUR] Erreur lors du "crypto pki authenticate ...",somebody,defect,closed,normal,IDX-PKI 3.4 (Paperotta)
+1683,Confiance aux AC : Segfault de httpd,somebody,defect,closed,normal,IDX-PKI 3.4 (Paperotta)
+1699,Renouvellement: amélioration des traductions anglaises,gsedratidinet,enhancement,closed,normal,IDX-PKI 3.4 (Paperotta)
+1700,Renouvellement Hors Service,gsedratidinet,defect,closed,normal,IDX-PKI 3.4 (Paperotta)
+1708,La langue associée à l'admin.p12 est toujours l'anglais,ndelon,enhancement,closed,lowest,IDX-PKI 3.4 (Paperotta)
+1709,La confirmation d'une demande de certificat est en anglais dans l'interface française,somebody,defect,closed,lowest,IDX-PKI 3.4 (Paperotta)
+1713,Méta-données: la langue devrait être attachée au DN et non au certificat,somebody,enhancement,new,normal,IDX-PKI Roadmap
+1714,Gestion des langues: c'est pas vraiment intuitif...,somebody,enhancement,new,normal,IDX-PKI Roadmap
+1726,Imprécision dans l'interface scep anglaise,blepilliez,enhancement,closed,lowest,IDX-PKI 3.4 (Paperotta)
+1727,Politique de mot de passe_ profil centralisé avec mot de passe aléatoire_ erreur sur l'AC,gsedratidinet,defect,closed,normal,IDX-PKI 3.4 (Paperotta)
+1730,Création d'un profil d'autofill: préciser le terme "identifiant utilisateur",somebody,enhancement,closed,normal,IDX-PKI 3.4 (Paperotta)
+1735,[PKI_CERT_SERV_LOG] Erreur interne,somebody,defect,closed,normal,IDX-PKI 3.4 (Paperotta)
+1738,Recouvrement de son propre certificat de chiffrement: le mail est envoyé chiffré,ndelon,defect,closed,normal,IDX-PKI 3.4 (Paperotta)
+1739,Profil avec prévalidation: la langue associée aux certificats est toujours l'anglais,ndelon,defect,closed,normal,IDX-PKI 3.4 (Paperotta)
+1742,Validation d'une demande de certificat: incohérence anglais/français,somebody,enhancement,closed,normal,IDX-PKI 3.4 (Paperotta)
+1744,Gestion des adresses emails dans l'interface de révocation par lot,somebody,enhancement,closed,normal,IDX-PKI 3.4 (Paperotta)
+1745,Révocation de l'admin.p12: aucune demande de certificat n'est possible après !,somebody,defect,closed,normal,IDX-PKI 3.4 (Paperotta)
+1756,SCEP: Code de révocation demandé sur l'EE alors qu'il n'y a pas besoin,somebody,enhancement,new,low,IDX-PKI Roadmap
+1759,Enrollment automatique SCEP: le passage en mode manuel devrait être loggué,somebody,enhancement,new,normal,IDX-PKI Roadmap
+1767,Support d'IE sous Vista,somebody,defect,new,normal,IDX-PKI 3.4 : Maintenance
+1771,Profil avec prévalidation: l'opérateur devrait pouvoir choisir la langue de l'utilisateur,somebody,enhancement,new,normal,IDX-PKI Roadmap
+1772,Les mails de notification de révocation avec un profil "serveur" sont envoyés de "root@localhost",somebody,defect,new,normal,IDX-PKI 3.4 : Maintenance
+1773,Catégories: Yellow message incorrect,somebody,defect,new,normal,IDX-PKI 3.4 : Maintenance
+1774,Gestion des groupes: L'interface "Droits d'administration" nécessite deux enregistrements pour être fonctionnelle,somebody,enhancement,new,normal,IDX-PKI 3.4 : Maintenance

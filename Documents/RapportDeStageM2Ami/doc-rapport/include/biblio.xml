@@ -1,0 +1,47 @@
+<bibliography>
+  <title>Bibliographie</title>
+    <bibliomixed id="Grimes97">
+      <surname>GRIMES</surname>, <firstname>Richard</firstname>,
+      <title><emphasis>Professionnal DCOM Programming</emphasis></title>.
+      <publishername>WROX Press</publishername>, <date>1997</date>. 
+      565 pages. 
+      <isbn>1-861000-60-X</isbn>
+    </bibliomixed>
+
+    <bibliomixed id="RFC2797">
+      <surname>MYERS</surname>, et al.
+      <title><emphasis>RFC 2797 : Certificate Management Messages over CMS</emphasis></title>.
+      <publishername>IETF</publishername>, <date>2000</date>. 
+      47 pages. 
+    </bibliomixed>
+
+    <bibliomixed id="Lowe-Norris00">
+      <surname>LOWE-NORRIS</surname>, <firstname>Alistair G.</firstname>,
+      <title><emphasis>Windows 2000 Active Directory</emphasis></title>.
+      <publishername>O'Reilly</publishername>, <date>2000</date>. 
+      621 pages. 
+      <isbn>1-56592-638-2</isbn>
+    </bibliomixed>
+    
+    <bibliomixed id="Brown04">
+      <surname>KEITH</surname>, <firstname>Brown</firstname>,
+      <title><emphasis>The .NET Developer's Guide to Windows Security</emphasis></title>.
+      <publishername>Addison Wesley</publishername>, <date>2004</date>. 
+      379 pages. 
+      <isbn>0-321-22835-9</isbn>
+    </bibliomixed>
+
+    <bibliomixed id="Gutmann03">
+      <surname>GUTMANN</surname>, <firstname>Peter</firstname>,
+      <title><emphasis>Plug-and-Play PKI: A PKI your Mother can Use</emphasis></title>.
+      <date>2003</date>. 
+    </bibliomixed>
+
+    <bibliomixed id="MsKb-Q281245">
+      <title><emphasis>Guidelines for enabling smart card logon with third-party certification authorities</emphasis></title>.
+      Microsoft. [en ligne].
+      <date>2007</date> [page consultée le 15/06/2007]. 
+      Disponible sur <bibliomisc><uri>http://support.microsoft.com/kb/281245</uri></bibliomisc>
+    </bibliomixed>
+
+</bibliography>

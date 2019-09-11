@@ -1,0 +1,105 @@
+<chapter>
+  <title>Présentation de l'entreprise</title>
+
+  <para>
+    IDEALX a été créée en février 2000 et s'est fixée
+    comme objectif de devenir le partenaire Open Source de référence des
+    grands comptes et administrations. Pour atteindre cet objectif,
+    IDEALX s'est attachée à construire et à proposer des solutions
+    packagées et des services à haute valeur ajoutée permettant à ses
+    clients de mettre en oeuvre des projets stratégiques à base de
+    composants Open Source.
+  </para>
+  
+  <para>
+    Par le mode de sélection de ses intervenants, à la fois sur des
+    critères d'excellence technique et d'adhésion au modèle Open Source,
+    IDEALX a constitué une équipe homogène de haut niveau. L'importance
+    accordée en interne à la R&amp;D ainsi que la
+    publication de ses résultats sur le site <uri>http://www.idealx.org</uri>
+    témoignent de cet engagement fort.
+  </para>
+  
+  <para>
+    IDEALX est devenu en 5 ans le leader en France des infrastructures de confiance, sécurité et dématérialisation,
+    avec plus de 100 références grands comptes et administrations réunis au sein du C3I, le Club des Clients 
+    Contributeurs IDEALX.
+  </para>
+
+  <sect1>
+    <title>IDEALX: éditeur de logiciel</title>
+    
+    <para>
+      Tout d'abord intégrateur de briques technologiques Open Source pour les applications de sécurité, IDEALX est maintenant
+      éditeur de logiciel spécialisé dans les infrastructures de confiance Open Source. En France et parmis les grands comptes, 
+      IDEALX représente 50% de part de marché avec des clients tels que Total, Areva, Gaz de France, La Poste, l'ANPE, le 
+      Ministère des finances, Sanofi-Aventis, AGF, GAN, Thales, et bien d'autres encore.
+    </para>
+
+    <para>
+      IDEALX est profitable depuis 2003 et a génèré un chiffre d'affaire de 10 millions d'euros en 2006. De plus, 
+      elle prévoit une croissance de 40% cette année, compte recruter 15 nouveaux collaborateurs et souhaite se développer à l'international.
+    </para>
+  </sect1>
+  
+  <sect1>
+    <title>L'offre OpenTrust</title>
+
+    <para>
+     L'offre OpenTrust regroupe les produits phares d'IDEALX : OpenTrust PKI, OpenTrust SCM, OpenTrust XCH et OpenTrust SPI.
+     Elle répond aux problématiques de sécurisation du SI et de dématérialisation des processus et applications. 
+     Au lieu d'adopter une démarche isolée et spécifique pour chaque domaine ou application, cette offre propose 
+     une infrastructure de confiance globale et multi-applicative.
+    </para>
+
+      <figure id="opentrustnew.png">
+
+        <title>L'offre OpenTrust</title>
+
+        <mediaobject><imageobject><imagedata fileref="opentrustnew.png"
+         format="PNG" width="75%"/></imageobject></mediaobject>
+      </figure>
+
+    <sect2>
+      <title>OpenTrust-PKI</title>
+
+      <para>
+      OpenTrust-PKI est l'infrastructure de gestion de clefs (PKI, en anglais) développée par IDEALX. Elle est simple,
+      ergonomique, complète et conçue pour pouvoir être déployée largement. Les solutions
+      concurrentes sont réputées être plus chères et d'administration complexe.
+      </para>
+    </sect2>
+
+    <sect2>
+      <title>OpenTrust-SCM</title>
+
+      <para>
+      OpenTrust-SCM (SCM pour Smart Card Manager) est un gestionnaire de cartes (à puce, sans contact, etc): il gère le cycle de vie
+      de la carte, est compatible avec plusieurs formats de cartes et d'applications, fournit un client facile à déployer et
+      peut interagir nativement avec Open-Trust-PKI.
+      </para>
+    </sect2>
+
+    <sect2>
+      <title>OpenTrust-XCH</title>
+      <para>
+      OpenTrust-XCH (XCH pour Exchanger) est un outil sécurisé d'échange et de mise à disposition de fichiers. Il permet à des
+      utilisateurs de déposer des fichiers, et de les mettre en accès à d'autres utilisateurs ou à des personnes extérieures, avec
+      utilisation de droits d'accès (consultation - modification - droit de joindre des fichiers, avec prise en compte de la date).
+      Il assure la confidentialité des échanges, l'authentification des utilisateurs et la traçabilité des actions.
+      </para>
+    </sect2>
+
+    <sect2>
+      <title>OpenTrust-SPI</title>
+      <para>
+      OpenTrust-SPI (SPI pour Signature and Proof Infrastructure) est un outil de signature électronique de documents et
+      de gestion de la preuve. Il est prévu pour la création et la validation de signature, la génération de compléments de preuve
+      à valeur probante, et l'archivage légal.
+      Il est par exemple utilisé pour la gestion des contrats de travail au sein de plus de 90% des agences d'interim en France.
+      </para>
+    </sect2>
+
+  </sect1>
+</chapter>
+
